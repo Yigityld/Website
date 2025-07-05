@@ -1303,7 +1303,7 @@ body {
 @media (max-width: 768px) {
     .hero-content {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
         text-align: center;
