@@ -3,247 +3,591 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Yiğit YILDIZ | Kişisel Web Sitesi</title>
+    <title>Yiğit YILDIZ | AI Developer & Computer Engineer</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/4b7e5e6e7a.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 </head>
 <body>
-    <nav>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Yiğit YILDIZ</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <span class="logo">Yiğit YILDIZ</span>
-            <ul>
-                <li><a href="#about">Hakkımda</a></li>
-                <li><a href="#experience">Deneyim</a></li>
-                <li><a href="#education">Eğitim</a></li>
-                <li><a href="#skills">Yetenekler</a></li>
-                <li><a href="#projects">Projeler</a></li>
-                <li><a href="#references">Referanslar</a></li>
-                <li><a href="#exams">Sınavlar</a></li>
-                <li><a href="#contact">İletişim</a></li>
-            </ul>
+            <div class="nav-logo">
+                <span class="logo-text">YY</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Ana Sayfa</a>
+                <a href="#about" class="nav-link">Hakkımda</a>
+                <a href="#experience" class="nav-link">Deneyim</a>
+                <a href="#projects" class="nav-link">Projeler</a>
+                <a href="#skills" class="nav-link">Yetenekler</a>
+                <a href="#education" class="nav-link">Eğitim</a>
+                <a href="#certifications" class="nav-link">Sertifikalar</a>
+                <a href="#contact" class="nav-link">İletişim</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <header class="hero">
-        <img src="profile.jpg" alt="Profil Fotoğrafı" class="profile-img" />
-        <h1>Yiğit YILDIZ</h1>
-        <p class="subtitle">Bilgisayar Mühendisi & Yapay Zeka Geliştiricisi</p>
-        <div class="social-links">
-            <a href="mailto:yigity4002@gmail.com" title="E-posta"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/Yigityld" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/yigit-y%C4%B1ld%C4%B1z-5976a3225/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="tel:+905071546582" title="Telefon"><i class="fas fa-phone"></i></a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
         </div>
-    </header>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-greeting">Merhaba, ben</div>
+                <h1 class="hero-title">Yiğit YILDIZ</h1>
+                <div class="hero-subtitle">
+                    <span id="typed-text"></span>
+                </div>
+                <p class="hero-description">
+                    Bilgisayar Mühendisi ve Yapay Zeka Geliştiricisi olarak, 
+                    geleceğin teknolojilerini bugün inşa ediyorum.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Projelerimi Gör</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>İletişime Geç</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <img src="profile.jpg" alt="Yiğit YILDIZ" class="profile-image" />
+                    <div class="profile-glow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
 
-    <main>
-        <section id="about" class="section-card animate-on-scroll">
-            <h2>Hakkımda</h2>
-            <p>
-                Ege Üniversitesi Bilgisayar Mühendisliği 4. sınıf öğrencisiyim. Ege ROV Takımı'nda takım kaptanlığı yaptım ve Teknofest İleri Kategori İnsansız Su Altı Sistemleri yarışmasında Türkiye 3.'sü ve En Özgün Tasarım ödüllerinin sahibi oldum. Görüntü işleme, derin öğrenme ve makine öğrenmesi alanlarında kapsamlı bilgi birikimim var ve kendimi bu alanlarda sürekli geliştirmekteyim. Çalıştığım projelerde takım çalışması, liderlik ve problem çözme becerilerimi pekiştirdim.
-            </p>
-        </section>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hakkımda</h2>
+                <div class="section-subtitle">Kimim ve ne yapıyorum</div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        Ege Üniversitesi Bilgisayar Mühendisliği 4. sınıf öğrencisiyim. Ege ROV Takımı'nda takım kaptanlığı yaptım ve Teknofest İleri Kategori İnsansız Su Altı Sistemleri yarışmasında Türkiye 3.'sü ve En Özgün Tasarım ödüllerinin sahibi oldum. Görüntü işleme, derin öğrenme ve makine öğrenmesi alanlarında kapsamlı bilgi birikimim var ve kendimi bu alanlarda sürekli geliştirmekteyim. Çalıştığım projelerde takım çalışması, liderlik ve problem çözme becerilerimi pekiştirdim. Yapay zeka teknolojilerinin geleceğini şekillendiren projelerde yer almayı ve bu alanda öncü çalışmalar yapmayı hedefliyorum.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Teknofest 3.'sü</h4>
+                                <p>İnsansız Su Altı Sistemleri</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Takım Kaptanı</h4>
+                                <p>Ege ROV Takımı</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>AI Developer</h4>
+                                <p>Derin Öğrenme Uzmanı</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Yıl Deneyim</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Proje</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Teknoloji</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="experience" class="section-card">
-            <h2>Deneyim</h2>
+    <!-- Experience Section -->
+    <section id="experience" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Deneyim</h2>
+                <div class="section-subtitle">Kariyer yolculuğum</div>
+            </div>
             <div class="timeline">
-                <div class="timeline-item animate-on-scroll">
-                    <span class="timeline-date">Ağustos 2024 - Eylül 2024</span>
-                    <b>Stajyer Yapay Zeka Geliştiricisi</b> - Skymod Teknoloji Bilişim Şirketi
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Ağustos 2024 - Eylül 2024</div>
+                        <h3 class="timeline-title">Stajyer Yapay Zeka Geliştiricisi</h3>
+                        <div class="timeline-company">Skymod Teknoloji Bilişim Şirketi</div>
+                        <p class="timeline-description">
+                            Yapay zeka projelerinde geliştirme ve optimizasyon çalışmaları.
+                        </p>
+                    </div>
                 </div>
-                <div class="timeline-item animate-on-scroll">
-                    <span class="timeline-date">Mart 2024 - Ağustos 2024</span>
-                    <b>Yapay Zeka Geliştiricisi</b> - Selfpeaks Bilişim Şirketi (Part-Time)
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Mart 2024 - Ağustos 2024</div>
+                        <h3 class="timeline-title">Yapay Zeka Geliştiricisi</h3>
+                        <div class="timeline-company">Selfpeaks Bilişim Şirketi (Part-Time)</div>
+                        <p class="timeline-description">
+                            Makine öğrenmesi modelleri geliştirme ve implementasyon.
+                        </p>
+                    </div>
                 </div>
-                <div class="timeline-item animate-on-scroll">
-                    <span class="timeline-date">Temmuz 2023 - Kasım 2024</span>
-                    <b>Takım Kaptanı</b> - Ege ROV Takımı (Teknofest)
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Temmuz 2023 - Kasım 2024</div>
+                        <h3 class="timeline-title">Takım Kaptanı</h3>
+                        <div class="timeline-company">Ege ROV Takımı (Teknofest)</div>
+                        <p class="timeline-description">
+                            Teknofest İleri Kategori İnsansız Su Altı Sistemleri yarışmasında 
+                            Türkiye 3.'sü ve En Özgün Tasarım ödülleri.
+                        </p>
+                    </div>
                 </div>
-                <div class="timeline-item animate-on-scroll">
-                    <span class="timeline-date">Haziran 2023 - Şubat 2024</span>
-                    <b>Denetim Kurulu Başkanı</b> - Ege Savunma Teknolojileri Topluluğu
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Haziran 2023 - Şubat 2024</div>
+                        <h3 class="timeline-title">Denetim Kurulu Başkanı</h3>
+                        <div class="timeline-company">Ege Savunma Teknolojileri Topluluğu</div>
+                        <p class="timeline-description">
+                            Topluluk yönetimi ve stratejik planlama.
+                        </p>
+                    </div>
                 </div>
-                <div class="timeline-item animate-on-scroll">
-                    <span class="timeline-date">Haziran 2023 - Ocak 2024</span>
-                    <b>Yapay Zeka Ekip Lideri</b> - MetaYıldız Bilişim Teknolojileri (Part-Time)
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Haziran 2023 - Ocak 2024</div>
+                        <h3 class="timeline-title">Yapay Zeka Ekip Lideri</h3>
+                        <div class="timeline-company">MetaYıldız Bilişim Teknolojileri (Part-Time)</div>
+                        <p class="timeline-description">
+                            AI projelerinde ekip liderliği ve teknik yönlendirme.
+                        </p>
+                    </div>
                 </div>
-                <div class="timeline-item animate-on-scroll">
-                    <span class="timeline-date">Ekim 2023 - Şubat 2024</span>
-                    <b>Yönetim Kurulu Üyesi</b> - Ege Savunma Teknolojileri Topluluğu
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Ekim 2023 - Şubat 2024</div>
+                        <h3 class="timeline-title">Yönetim Kurulu Üyesi</h3>
+                        <div class="timeline-company">Ege Savunma Teknolojileri Topluluğu</div>
+                        <p class="timeline-description">
+                            Topluluk yönetimi ve organizasyon faaliyetleri.
+                        </p>
+                    </div>
                 </div>
-                <div class="timeline-item animate-on-scroll">
-                    <span class="timeline-date">Ekim 2022 - Temmuz 2023</span>
-                    <b>Yazılım Kaptanı</b> - Ege ROV Takımı (Teknofest)
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Ekim 2022 - Temmuz 2023</div>
+                        <h3 class="timeline-title">Yazılım Kaptanı</h3>
+                        <div class="timeline-company">Ege ROV Takımı (Teknofest)</div>
+                        <p class="timeline-description">
+                            Teknofest yarışması için yazılım geliştirme ve takım koordinasyonu.
+                        </p>
+                    </div>
                 </div>
-                <div class="timeline-item animate-on-scroll">
-                    <span class="timeline-date">Ağustos 2022 - Ağustos 2023</span>
-                    <b>Yazılım Birimi Koordinatörü</b> - Ege Savunma Teknolojileri Topluluğu
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Ağustos 2022 - Ağustos 2023</div>
+                        <h3 class="timeline-title">Yazılım Birimi Koordinatörü</h3>
+                        <div class="timeline-company">Ege Savunma Teknolojileri Topluluğu</div>
+                        <p class="timeline-description">
+                            Yazılım projelerinin koordinasyonu ve teknik yönetimi.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="education" class="section-card animate-on-scroll">
-            <h2>Eğitim</h2>
-            <ul>
-                <li>
-                    <b>Ege Üniversitesi</b> - Bilgisayar Mühendisliği Lisans Derecesi
-                    <span class="date">Eylül 2020 - Devam Ediyor</span><br />GPA: 3.05
-                </li>
-            </ul>
-        </section>
-
-        <section id="skills" class="section-card animate-on-scroll">
-            <h2>Yetenekler</h2>
-            <ul>
-                <li><b>Programlama Dilleri:</b> Python (En çok kullanılan), C/C++, Flutter</li>
-                <li><b>Diller:</b> İngilizce (B2, Tam Çalışma Yeterliliği), Türkçe (Ana dil)</li>
-                <li><b>Teknik Beceriler:</b> YOLO, Roboflow, OpenCV, LLM, Jetson Nano, Derin Öğrenme, Git &amp; GitHub</li>
-            </ul>
-        </section>
-
-        <section id="projects" class="section-card animate-on-scroll projects-section">
-            <h2>Projeler</h2>
-            <div class="projects-layout">
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projeler</h2>
+                <div class="section-subtitle">En iyi çalışmalarım</div>
+            </div>
+            <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Su Altı Simülasyonunda Nesne Tespiti ve Görev Uygulaması (Bitirme Tezi)</h3>
-                    <p>
-                        Antik eser, boru, boru sızıntısı ve mayın tespiti gerçekleştiren bir su altı simülasyonu geliştirildi. Nesne tespiti işlemleri YOLOv8 ve Roboflow teknolojileriyle başarıyla tamamlandı. Unity (C#) ve Python arasında TCP tabanlı veri iletişimi sağlandı. Görev senaryoları görüntü işleme tabanlı karar mekanizmaları ile hayata geçirildi.
-                    </p>
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-tech">
+                                <span class="tech-tag">YOLOv8</span>
+                                <span class="tech-tag">Unity</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Su Altı Simülasyonunda Nesne Tespiti</h3>
+                        <p class="project-description">
+                            Antik eser, boru, boru sızıntısı ve mayın tespiti gerçekleştiren 
+                            su altı simülasyonu. YOLOv8 ve Roboflow teknolojileriyle geliştirildi.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="underwater">
+                                <i class="fas fa-external-link-alt"></i>
+                                Detaylar
+                            </a>
+                            <a href="#" class="project-link github-link" title="Video Demo">
+                                <i class="fas fa-play-circle"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>Virtual Assistant</h3>
-                    <p>
-                        Face Recognition yapan, YouTube, Google, Wikipedia, ChatGPT gibi kaynaklardan veri çekerek iletişime geçen ve birçok özellik barındıran yapay zeka destekli sanal asistan. Bu sistem, derin öğrenme tabanlı yüz tanıma algoritmalarıyla kimlik doğrulaması yapar ve doğal dil işleme (NLP) teknikleriyle farklı veri kaynaklarından gelen bilgileri entegre ederek kullanıcı ile etkili ve akıcı bir iletişim kurar. Çoklu API entegrasyonları sayesinde bilgiye anlık erişim sağlar ve etkileşimli deneyimi artırır.
-                    </p>
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-tech">
+                                <span class="tech-tag">Face Recognition</span>
+                                <span class="tech-tag">NLP</span>
+                                <span class="tech-tag">API</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Virtual Assistant</h3>
+                        <p class="project-description">
+                            Yüz tanıma özellikli, çoklu API entegrasyonlu yapay zeka destekli 
+                            sanal asistan sistemi.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="assistant">
+                                <i class="fas fa-external-link-alt"></i>
+                                Detaylar
+                            </a>
+                            <a href="https://github.com/Yigityld/VirtualAssistant" class="project-link github-link" target="_blank" title="GitHub Repository">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="project-link-logo">
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card center-project">
-                    <h3>Football Analysis</h3>
-                    <p>
-                        LLM tabanlı gelecek maç tahmini yapan, YOLOv8 ile oyuncu ve takım tanımlaması yapan, hakem ve takım bilgilerini gösteren, maç istatistiklerini analiz eden kapsamlı futbol analiz sistemi. Bu analiz sistemi, ileri görüntü işleme ve nesne tanıma algoritmalarını kullanarak sahadaki oyuncu ve takım konumlarını gerçek zamanlı takip eder. Büyük dil modelleri (LLM) ile maç verilerini analiz edip geleceğe yönelik skor ve performans tahminleri yapar. İstatistiksel veri çıkarımı ve makine öğrenmesi tabanlı öngörüler, teknik ekiplerin stratejik planlamalarında veri odaklı kararlar almasını sağlar.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="references" class="section-card animate-on-scroll">
-            <h2>Referanslar</h2>
-            <ul>
-                <li>
-                    Prof. Dr. Nurettin ACIR - MSÜ Hava Harp Okulu Dekanı, İBİR Elektrik Yönetim Kurulu Başkanı
-                    <br /><a href="mailto:acirnurettin@gmail.com">acirnurettin@gmail.com</a>
-                </li>
-                <li>
-                    Prof. Dr. Murat Osman ÜNALIR - Ege Üniversitesi Bilgisayar Mühendisliği Bölüm Başkanı
-                    <br /><a href="mailto:murat.osman.unalir@ege.edu.tr">murat.osman.unalir@ege.edu.tr</a>
-                </li>
-                <li>
-                    Prof. Dr. Aybars UĞUR - Ege Üniversitesi Bilgisayar Mühendisliği Öğretim Üyesi
-                    <br /><a href="mailto:aybars.ugur@ege.edu.tr">aybars.ugur@ege.edu.tr</a>
-                </li>
-                <li>
-                    Dr. Emine SEZER - Ege Üniversitesi Bilgisayar Mühendisliği Bölüm Başkan Yardımcısı
-                    <br /><a href="mailto:emine.sezer@ege.edu.tr">emine.sezer@ege.edu.tr</a>
-                </li>
-                <li>
-                    Doç. Dr. Özgür GÜMÜŞ - Ege Üniversitesi Bilgisayar Mühendisliği Öğretim Üyesi
-                    <br /><a href="mailto:ozgur.gumus@ege.edu.tr">ozgur.gumus@ege.edu.tr</a>
-                </li>
-            </ul>
-        </section>
-
-        <section id="exams" class="section-card animate-on-scroll">
-            <h2>Sınavlar</h2>
-            <ul>
-                <li>Yabancı Dil Bilgisi Seviye Tespit Sınavı (YDS): 73.75 (İngilizce)</li>
-            </ul>
-        </section>
-
-        <section id="contact" class="section-card animate-on-scroll">
-            <h2>İletişim</h2>
-            <div class="contact-flex">
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <input type="text" id="name" placeholder="Adınız" required />
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-tech">
+                                <span class="tech-tag">LLM</span>
+                                <span class="tech-tag">YOLOv8</span>
+                                <span class="tech-tag">Analytics</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-row">
-                        <input type="email" id="email" placeholder="E-posta" required />
-                    </div>
-                    <textarea id="message" placeholder="Mesajınız" required></textarea>
-                    <button type="submit"><i class="fas fa-paper-plane"></i> Gönder</button>
-                    <div id="formResult" class="form-result"></div>
-                </form>
-                <div class="contact-cards">
-                    <div class="contact-card email">
-                        <span class="icon">📧</span>
-                        <a href="mailto:yigity4002@gmail.com">yigity4002@gmail.com</a>
-                    </div>
-                    <div class="contact-card phone">
-                        <span class="icon">📱</span>
-                        <a href="tel:+905071546582">+90-507-154-6582</a>
-                    </div>
-                    <div class="contact-card github">
-                        <span class="icon"><i class="fab fa-github"></i></span>
-                        <a href="https://github.com/Yigityld" target="_blank">GitHub</a>
-                    </div>
-                    <div class="contact-card linkedin">
-                        <span class="icon"><i class="fab fa-linkedin"></i></span>
-                        <a href="https://www.linkedin.com/in/yigit-y%C4%B1ld%C4%B1z-5976a3225/" target="_blank">LinkedIn</a>
+                    <div class="project-content">
+                        <h3 class="project-title">Football Analysis</h3>
+                        <p class="project-description">
+                            LLM tabanlı maç tahmini, oyuncu tanımlama ve kapsamlı 
+                            futbol analiz sistemi.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="football">
+                                <i class="fas fa-external-link-alt"></i>
+                                Detaylar
+                            </a>
+                            <a href="https://github.com/Yigityld/Football_Analysis" class="project-link github-link" target="_blank" title="GitHub Repository">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="project-link-logo">
+                                GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Yiğit YILDIZ</p>
+    <!-- Skills Section -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Yetenekler</h2>
+                <div class="section-subtitle">Teknik becerilerim</div>
+            </div>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3 class="category-title">Programlama Dilleri</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name-with-logo">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo">
+                                    <span class="skill-name">Python</span>
+                                </div>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name-with-logo">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="skill-logo">
+                                    <span class="skill-name">C/C++</span>
+                                </div>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name-with-logo">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="skill-logo">
+                                    <span class="skill-name">Flutter</span>
+                                </div>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-title">AI & ML Teknolojileri</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name-with-logo">
+                                    <img src="https://raw.githubusercontent.com/ultralytics/assets/main/yolov8/banner-yolo.png" alt="YOLO" class="skill-logo">
+                                    <span class="skill-name">YOLO</span>
+                                </div>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name-with-logo">
+                                    <img src="https://opencv.org/wp-content/uploads/2021/07/OpenCV_logo_black.png" alt="OpenCV" class="skill-logo">
+                                    <span class="skill-name">OpenCV</span>
+                                </div>
+                                <span class="skill-level">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name-with-logo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/1200px-Tensorflow_logo.svg.png" alt="LLM" class="skill-logo">
+                                    <span class="skill-name">LLM</span>
+                                </div>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Eğitim</h2>
+                <div class="section-subtitle">Akademik geçmişim</div>
+            </div>
+            <div class="education-content">
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-details">
+                        <h3 class="education-title">Bilgisayar Mühendisliği Lisans Derecesi</h3>
+                        <div class="education-school">Ege Üniversitesi</div>
+                        <div class="education-period">Eylül 2020 - Devam Ediyor</div>
+                        <div class="education-gpa">GPA: 3.05</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sertifikalar & Sınavlar</h2>
+                <div class="section-subtitle">Başarılarım ve belgelerim</div>
+            </div>
+            <div class="certifications-content">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certification-details">
+                        <h3 class="certification-title">Yabancı Dil Bilgisi Seviye Tespit Sınavı (YDS)</h3>
+                        <div class="certification-score">73.75 (İngilizce)</div>
+                        <div class="certification-description">
+                            İngilizce dil yeterliliği belgesi - Tam çalışma yeterliliği seviyesi
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">İletişim</h2>
+                <div class="section-subtitle">Benimle iletişime geçin</div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gmail/gmail-original.svg" alt="Email" class="contact-logo">
+                        </div>
+                        <div class="contact-details">
+                            <h4>E-posta</h4>
+                            <a href="mailto:yigity4002@gmail.com">yigity4002@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Phone" class="contact-logo">
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefon</h4>
+                            <a href="tel:+905071546582">+90 507 154 65 82</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="contact-logo">
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/Yigityld" target="_blank">github.com/Yigityld</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="contact-logo">
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/yigit-y%C4%B1ld%C4%B1z-5976a3225/" target="_blank">Yiğit YILDIZ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Adınız" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="E-posta" required />
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Mesajınız" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Mesaj Gönder</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Yiğit YILDIZ. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Yigityld" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yigit-y%C4%B1ld%C4%B1z-5976a3225/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:yigity4002@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script>
-        // Scroll animasyonları için fonksiyonlar
-        function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 && rect.bottom >= 0;
-        }
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+            </div>
+        </div>
+    </div>
 
-        function scrollAnimationHandler() {
-        const elements = document.querySelectorAll('.animate-on-scroll');
-        elements.forEach((el) => {
-        if (isElementInViewport(el)) {
-        el.classList.add('visible');
-        }
-        });
-        }
-
-        window.addEventListener('scroll', scrollAnimationHandler);
-        window.addEventListener('load', scrollAnimationHandler);
-
-        // Contact form mailto bağlantısı
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var message = document.getElementById('message').value;
-        var mailtoLink =
-        `mailto:yigity4002@gmail.com?subject=Web%20Sitesi%20İletişim%20(${encodeURIComponent(name)})&body=Gönderen: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0A%0A${encodeURIComponent(message)}`;
-        window.location.href = mailtoLink;
-        document.getElementById('formResult').innerHTML = '<span style="color:#2563eb;font-weight:600;">Mail uygulamanız açıldıysa mesajınızı oradan gönderebilirsiniz.</span>';
-        });
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetID = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetID);
-        const navHeight = document.querySelector('nav').offsetHeight;
-        if(targetElement) {
-        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-        top: elementPosition - navHeight - 50, // 10px ekstra boşluk
-        behavior: 'smooth'
-        });
-        }
-        });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
