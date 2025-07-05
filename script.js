@@ -353,8 +353,8 @@ function closeModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Event listeners for project links
-document.querySelectorAll('.project-link').forEach(link => {
+// Event listeners for project links (only modal links)
+document.querySelectorAll('.project-link[data-project]').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
         const projectId = this.getAttribute('data-project');
