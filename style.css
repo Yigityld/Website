@@ -993,8 +993,6 @@ body {
     line-height: 1.6;
 }
 
-
-
 /* Modal */
 .modal {
     position: fixed;
@@ -1238,6 +1236,23 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+.footer-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+    padding: 2px;
+}
+
+.footer-logo:hover {
+    transform: scale(1.15) translateY(-3px);
+    box-shadow: 0 4px 16px rgba(99,102,241,0.18);
+    background: #f3f4f6;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero-content {
@@ -1266,8 +1281,6 @@ body {
         text-align: center;
         gap: 1rem;
     }
-    
-
     
     .timeline::before {
         left: 2rem;
