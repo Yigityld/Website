@@ -1303,7 +1303,7 @@ body {
 @media (max-width: 768px) {
     .hero-content {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -1311,11 +1311,15 @@ body {
         padding: 0 1rem;
     }
     .hero-image {
+        order: -1;
         margin-top: 1.5rem;
         margin-bottom: 0;
         width: 100%;
         display: flex;
         justify-content: center;
+    }
+    .hero-text {
+        order: 1;
     }
     .profile-container {
         width: 180px;
