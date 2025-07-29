@@ -547,3 +547,46 @@ document.querySelectorAll('.demo-btn').forEach(btn => {
         if (src) showMediaInModal({title, type, src});
     });
 }); 
+
+// Teknofest detay açıklamaları
+const teknofestData = {
+    teknofest2023: {
+        title: 'TEKNOFEST 2023',
+        content: `
+            <h4>Detaylı Açıklama</h4>
+            <p>TEKNOFEST 2023 İnsansız Su Altı Sistemleri yarışmasında, yazılım takım kaptanı olarak görev aldım. Yarışma görevleri arasında, otonom olarak kırmızı daireye konumlanma ve farklı geometrik geçiş noktalarından (çember ve dikdörtgen yapılar) başarıyla geçiş gibi hassas görevler yer alıyordu. Bu görevlerin gerçekleştirilmesi için Python tabanlı bir yazılım mimarisi kuruldu.</p>
+            <p>Görüntü işleme tarafında OpenCV kütüphanesini kullanarak renk, şekil ve konum tespiti sağlandı. Nesne tanıma için YOLOv5 modeli entegre edildi ve deniz altı ortamına uygun şekilde yeniden eğitildi. Ayrıca bu görevlerin yüksek doğrulukla gerçekleştirilmesi için özel bir güdüm algoritması geliştirerek aracın x, y ve yön bilgilerine göre rota belirlemesini ve görev noktalarında stabil şekilde konumlanmasını sağladım.</p>
+            <p>Sistem, görev sırasında gerçek zamanlı olarak kamera verilerini işleyip karar mekanizmasını tetikleyerek aracı kontrol etti. Geliştirilen bu sistem sayesinde takımımız ilk katılım yılında finalist olarak Türkiye 15.si olma başarısı gösterdi. Bu süreçte görev ayrımı, görev geçişleri, hata toleransı ve görev önceliklendirme gibi konularda da yazılım mimarisi geliştirdim.</p>
+        `
+    },
+    teknofest2024: {
+        title: 'TEKNOFEST 2024',
+        content: `
+            <h4>Detaylı Açıklama</h4>
+            <p>TEKNOFEST 2024 İnsansız Su Altı Sistemleri kategorisinde takım kaptanı ve yazılım geliştirici olarak görev aldım. Yarışma kapsamında üç ana görev bulunmaktaydı:</p>
+            <ul>
+                <li><b>Torpido Atımı ve Şekil Tespiti:</b> Aracın belirli bir mesafeden torpido fırlatmasını sağlayan bir sistem geliştirildi. Görev alanı içerisindeki hedef şekil, YOLOv8 ile tespit edilerek mesafe ve konum bilgileri ile entegre edildi. Atış açısı ve mesafeye göre karar mekanizması kuruldu.</li>
+                <li><b>Hat Takibi ve Şekil Tespiti:</b> Deniz tabanına yerleştirilmiş beyaz hattın OpenCV ile takip edilmesini sağlayan algoritma geliştirildi. Hat takibi sırasında karşılaşılan şekiller (çember, yıldız, üçgen vb.) ayrı bir sınıflandırma algoritması ile tespit edildi ve görev durumu güncellendi.</li>
+                <li><b>Kapıdan Geçiş ve Şekil Tespiti:</b> Kamera verileri üzerinden kapı yapısı segment edilerek aracın dik açıyla geçmesini sağlayan yönsel karar yapısı oluşturuldu. Geçiş sonrası hedef şekil tespiti de başarıyla gerçekleştirildi.</li>
+            </ul>
+            <p>Tüm görevlerde OpenCV ve YOLOv8 tabanlı nesne algılama sistemleri kullanılmış, görev sırasına bağlı şekilde çalışan modüler yazılım mimarisi geliştirilmiştir. Ayrıca görevler arası geçişleri yöneten, hatalı durumu tespit eden ve kararlılığı sağlayan özel bir durum yönetim sistemi (state machine) yazılmıştır.</p>
+            <p>Bu yapay zeka destekli görev bazlı sistem sayesinde takımımız Türkiye 3.lüğü ve En Özgün Tasarım Ödülü kazanmıştır. Yazılım tarafında hem gerçek zamanlı karar mekanizması hem de görev geçişlerini yöneten kapsamlı bir kontrol sistemi geliştirilmiştir.</p>
+        `
+    }
+};
+
+// Teknofest Detaylar butonları için event listener
+
+document.querySelectorAll('.teknofest-details-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const key = this.getAttribute('data-teknofest');
+        const data = teknofestData[key];
+        if (data) {
+            modalTitle.textContent = data.title;
+            modalBody.innerHTML = data.content;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+}); 
