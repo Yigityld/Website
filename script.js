@@ -504,3 +504,46 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.opacity = '1';
     }, 1500);
 }); 
+
+// Görsel ve video gösterimi için modalı güncelle
+function showMediaInModal({title, type, src}) {
+    modalTitle.textContent = title;
+    if (type === 'image') {
+        modalBody.innerHTML = `<img src="${src}" alt="${title}" style="max-width:100%;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.15);margin:auto;display:block;">`;
+    } else if (type === 'video') {
+        modalBody.innerHTML = `<video src="${src}" controls style="max-width:100%;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.15);margin:auto;display:block;"></video>`;
+    }
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Çıktı butonları (image veya video)
+document.querySelectorAll('.output-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const img = this.getAttribute('data-img');
+        const video = this.getAttribute('data-video');
+        let type, src, title = this.textContent;
+        if (img) {
+            type = 'image'; src = img;
+        } else if (video) {
+            type = 'video'; src = video;
+        }
+        if (src) showMediaInModal({title, type, src});
+    });
+});
+// Demo butonları (image veya video)
+document.querySelectorAll('.demo-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const img = this.getAttribute('data-img');
+        const video = this.getAttribute('data-video');
+        let type, src, title = this.textContent;
+        if (img) {
+            type = 'image'; src = img;
+        } else if (video) {
+            type = 'video'; src = video;
+        }
+        if (src) showMediaInModal({title, type, src});
+    });
+}); 
