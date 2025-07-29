@@ -768,6 +768,7 @@ body {
 
 .project-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -807,6 +808,19 @@ body {
     background: var(--text-primary);
     color: white;
 }
+
+.project-card.teknofest-card {
+    border: 2px solid #00bcd4;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.2);
+}
+
+.project-card.teknofest-card .project-title {
+    color: #007c91;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
 
 /* Skills */
 .skills-content {
